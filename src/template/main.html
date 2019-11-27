@@ -1,0 +1,55 @@
+<section class="movies servicewebWrapper">
+
+    <h1>Webbvideo</h1>
+
+    <div class="bc-video-box">
+        <video-js id="bc-video" data-account="745456160001" data-player="qbZuNu62r" data-embed="default"
+            class="video-js bc-video vjs-fluid" controls="">
+        </video-js>
+    </div>
+
+    <% if ( hasPlaylist ) { %>
+    <script src="//players.brightcove.net/745456160001/qbZuNu62r_default/index.min.js"></script>
+
+    <ul class="<%= videoClassName %>">
+        <% for(var i = 0; i < playlist.length; i++) { %>
+        <% var video = playlist[i]; %>
+        <% if( video.useExternalVideoLink ) { %>
+        <li>
+            <a href="http://video.malmo.se/?bctid=<%= video.id %>">
+                <div class="crop">
+                    <% if ( video.thumbnailURL ) { %>
+                    <img src="<%= video.thumbnailURL %>" alt="">
+                    <% } %>
+                    <div class="play"></div>
+                </div>
+                <h2><%= video.name %></h2>
+            </a>
+        </li>
+        <% } else { %>
+        <li class="show-inline" data-video-id="<%= video.id %>">
+            <div class="crop">
+                <% if ( video.thumbnailURL ) { %>
+                <img src="<%= video.thumbnailURL %>" alt="">
+                <% } %>
+                <div class="play"></div>
+            </div>
+            <h2><%= video.name %></h2>
+        </li>
+        <% } %>
+        <% } %>
+    </ul>
+
+    <% } else if (editmode) { %>
+
+    <div style="font-size:20px;color:#fff;padding:40px 10px 50px;text-align:center;">
+        Ingen spellista vald
+    </div>
+
+    <% } %>
+
+
+
+    <a href="http://video.malmo.se/" class="more">Fler filmer</a>
+
+</section>

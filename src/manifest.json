@@ -1,0 +1,9 @@
+{
+    "id": "afBrightcove",
+    "version": "0.0.1",
+    "name": "Brightcove",
+    "author": "ÅF Digital solution",
+    "description": "Handles Birghtcove videos",
+    "helpUrl": "https://webbteam.se/brightcove",
+    "type": "WebApp"
+}
