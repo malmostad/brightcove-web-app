@@ -123,7 +123,8 @@
             editmode: editmode,
             videoClassName: videoClassName,
             playlist: playlist,
-            hasPlaylist: hasPlaylist
+            hasPlaylist: hasPlaylist,
+            amountVideos: playlist.length
         });
     });
 

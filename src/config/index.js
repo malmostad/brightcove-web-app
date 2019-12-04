@@ -50,6 +50,7 @@
             })
             .fail(function (message, status) {
 
+                playlist = [];
                 logUtil.error('Could not get playlists for BrightCove: ' + JSON.stringify(message));
             });
 
